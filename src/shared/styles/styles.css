@@ -1,0 +1,22 @@
+.segment {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.segment_item {
+    height: 10px;
+    width: 30px;
+}
+
+.segment_item--done {
+    background: black;
+}
+
+.segment_item--current {
+    background: red;
+}
+
+.segment_item--undone {
+    background: grey;
+}

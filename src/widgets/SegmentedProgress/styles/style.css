@@ -1,0 +1,21 @@
+.progress {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    gap: 5px;
+}
+
+.progress_item {
+    height: 10px;
+    width: 30px;
+    background: gray;
+    flex: 1;
+}
+
+.progress_item--done {
+    background: black;
+}
+
+.progress_item--current {
+    background: red;
+}
