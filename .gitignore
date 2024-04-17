@@ -7,7 +7,7 @@
 ### Node.js custom template
 
 # Lockfiles
-package-lock.json
+# package-lock.json
 yarn.lock
 
 ### VisualStudioCode template
