@@ -31,11 +31,15 @@ const theme = createTheme({
   });
 
 
-export const CustomButton: FunctionComponent<{text: string, disabled: boolean, onClick: () => void }> = ({text, disabled, onClick}) => {
+export const CustomButton: FunctionComponent<{text: string,
+                                              disabled: boolean,
+                                              type?: string,
+                                              form?: string
+                                              onClick: () => void }> = ({text, disabled, type, form, onClick}) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Button variant='contained' color="red" onClick={onClick} disabled={disabled}>{text}</Button>
+            <Button type={type} form={form} variant='contained' color="red" onClick={onClick} disabled={disabled}>{text}</Button>
         </ThemeProvider>
     )
 }

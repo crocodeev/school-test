@@ -9,37 +9,12 @@ import { persistStore,
         PURGE,
         REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-
-
-interface IQuestion {
-    message: string
-}
-
-type TTimerStore = {
-    secondsLeft: number,
-    initial: number
-}
-
-type TQuiz = {
-    current: number,
-    questions: IQuestion[],
-    answers: any[],
-    timer: TTimerStore,
-    isCompleted: boolean,
-    isStarted: boolean
-}
+import { TQuiz } from './models/store'
+import { questions } from '../mocks/questions'
 
 const initialState: TQuiz = {
     current: 0,
-    questions: [{
-        message: "This"
-    },
-    {
-        message: "Is"
-    },
-    {
-        message: "Question"
-    }],
+    questions: questions,
     answers: [],
     timer: {
         secondsLeft: 70,
@@ -67,6 +42,9 @@ const quizSlice = createSlice({
         },
         setStarted (state) {
             state.isStarted = true
+        },
+        setAnswer (state, action: PayloadAction<any>) {
+            state.answers.push(action.payload)
         }
     }
 })
@@ -78,7 +56,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, quizSlice.reducer)
 
-export const { next, setTime, setCompleted, setStarted } = quizSlice.actions
+export const { next, setTime, setCompleted, setStarted, setAnswer } = quizSlice.actions
 
 const listenerMiddleware = createListenerMiddleware()
 
@@ -94,13 +72,11 @@ const store = configureStore({
         }).prepend(listenerMiddleware.middleware),
 })
 
-export default store
 
 type RootState = ReturnType<typeof store.getState>
 type AppDispatch = typeof store.dispatch
 
-const startAppListening = listenerMiddleware.startListening.withTypes<RootState,AppDispatch
->()
+const startAppListening = listenerMiddleware.startListening.withTypes<RootState,AppDispatch>()
 
 startAppListening({
     predicate: (action, currentState, previousState) => {
@@ -117,6 +93,7 @@ startAppListening({
     }
 })
 
+export default store
 export const useAppSelector = useSelector.withTypes<RootState>()
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
 export const persistor = persistStore(store)

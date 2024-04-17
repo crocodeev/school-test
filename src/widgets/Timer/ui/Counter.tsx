@@ -9,9 +9,6 @@ export const Counter: FunctionComponent = () => {
     const dispatch = useAppDispatch()
     const timer = useAppSelector(state => state.quiz.timer)
     const secondsLeft = timer.secondsLeft
-
-    console.log(secondsLeft)
-    
    
     const time = useTimer(secondsLeft, () => dispatch(setTime(time)))
   

@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { CustomButton as Button } from 'src/shared/ui/Button'
 import { useAppSelector, useAppDispatch } from 'src/shared/store/store'
 import { next } from 'src/shared/store/store'
+import { FORM_ID } from 'src/shared/constants/constants'
 
 export const NextButton: FunctionComponent = () => {
 
@@ -15,7 +16,7 @@ export const NextButton: FunctionComponent = () => {
 
     return (
         isStarted ?
-        <Button onClick={handleClick} disabled={ isCompleted } text="Ответить" />
+        <Button type="submit" form={FORM_ID} onClick={handleClick} disabled={ isCompleted } text="Ответить" />
         :
         null
     )
