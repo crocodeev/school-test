@@ -45,6 +45,10 @@ const quizSlice = createSlice({
         },
         setAnswer (state, action: PayloadAction<any>) {
             state.answers.push(action.payload)
+            if(state.current === state.questions.length - 1){
+                state.isCompleted = true
+            }
+            state.current++
         }
     }
 })

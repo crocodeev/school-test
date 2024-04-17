@@ -3,7 +3,7 @@ import { QuestionPlaceholder } from './QuestionPlaceholder'
 import { Paper } from '@mui/material'
 import { useAppSelector } from 'src/shared/store/store'
 import { CustomForm } from 'src/entities/forms'
-import { FormSelect } from 'src/entities/forms/ui/FormSelect'
+import { Answers } from './Answers'
 
 
 export const QuestionContainer: FunctionComponent = () => {
@@ -21,7 +21,7 @@ export const QuestionContainer: FunctionComponent = () => {
 
     } else if(isCompleted) {
         
-        element = <QuestionPlaceholder text="ТЕСТИРОВАНИЕ ЗАВЕРШЕНО" />
+        element = <Answers />
 
     }else {
 

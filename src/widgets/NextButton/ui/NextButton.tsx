@@ -8,15 +8,10 @@ export const NextButton: FunctionComponent = () => {
 
     const isStarted = useAppSelector(state => state.quiz.isStarted)
     const isCompleted = useAppSelector(state => state.quiz.isCompleted)
-    const dispath = useAppDispatch()
-
-    const handleClick = () => {
-        dispath(next())
-    }
 
     return (
         isStarted ?
-        <Button type="submit" form={FORM_ID} onClick={handleClick} disabled={ isCompleted } text="Ответить" />
+        <Button type="submit" form={FORM_ID} onClick={() => {}} disabled={ isCompleted } text="Ответить" />
         :
         null
     )
