@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { Counter } from './Counter'
-import { useAppDispath, useAppSelector } from 'src/shared/store/store'
+import { useAppSelector } from 'src/shared/store/store'
 import { toMMss } from '../lib/formatTime'
 import '../styles/styles.css'
 

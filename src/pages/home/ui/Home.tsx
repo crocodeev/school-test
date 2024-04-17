@@ -4,7 +4,7 @@ import { NextButton } from 'src/widgets/NextButton'
 import { Timer } from 'src/widgets/Timer'
 import { Box, Container, Grid } from '@mui/material'
 import { StartButton } from 'src/widgets/StartButton'
-import { QuestionContainer } from 'src/widgets/Question/ui/QuestionContainer'
+import { QuestionContainer } from 'src/widgets/Question'
 
 export const Home: FunctionComponent = () => {
 

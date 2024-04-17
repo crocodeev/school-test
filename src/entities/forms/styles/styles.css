@@ -1,0 +1,23 @@
+.form__text-input {
+    height: 3em;
+    width: 100%;
+    font-size: 1em;
+}
+
+.form__textarea-input {
+    height: 100%;
+    width: 50vw;
+    font-size: 1em;
+}
+
+.form__select-input {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+}
+
+.form-radiobutton{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}

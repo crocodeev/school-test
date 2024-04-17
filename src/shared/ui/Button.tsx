@@ -33,7 +33,7 @@ const theme = createTheme({
 
 export const CustomButton: FunctionComponent<{text: string,
                                               disabled: boolean,
-                                              type?: string,
+                                              type?: "submit" | "button" | "reset" | undefined,
                                               form?: string
                                               onClick: () => void }> = ({text, disabled, type, form, onClick}) => {
 

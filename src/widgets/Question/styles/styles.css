@@ -1,0 +1,9 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.list__element {
+    overflow-wrap: break-word;
+}
