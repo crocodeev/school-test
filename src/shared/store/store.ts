@@ -18,7 +18,7 @@ const initialState: TQuiz = {
     answers: [],
     timer: {
         secondsLeft: 600,
-        initial: 70
+        initial: 600
     },
     isCompleted: false,
     isStarted: false,
