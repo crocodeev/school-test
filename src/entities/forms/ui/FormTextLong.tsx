@@ -32,7 +32,7 @@ export const FormTextLong: FunctionComponent<{ question: ILongQuestion}> = ({ qu
                 className='form__textarea-input'
                 aria-invalid={errors.answer ? "true" : "false"} />
                 {errors[answer] && (
-                <p role="alert">Дайте развёрнутый ответ</p>
+                <p role="alert">Дайте развёрнутый ответ, минимум 60 символов</p>
                 )} 
             </form> 
         </Grid>
